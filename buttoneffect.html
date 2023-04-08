@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button Effect</title>
+    <style>
+        body {
+            background-color: #316;
+        }
+        .button {
+            margin: 20px;
+            display: inline-block;
+            font-family: arial;
+            font-weight: bold;
+        }
+        
+        .button a {
+            text-decoration: none;
+            padding: 7px 15px 3px 7px;
+            display: inline-block;
+            background-color: white;
+            border-radius: 50px;
+            color: #777;
+            box-shadow: 0 0 3px 1px black;
+        }
+        .button a:hover {
+            background-color: #FDF5E6;
+            color: darkred;
+            box-shadow: 0 0 4px 2px #FF4500 ;
+            
+        }
+        .button a::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            transform: translateY(-2px);
+            width: 30px;
+            height: 30px;
+            /*background-color: red;*/
+            background-image: url(cloud_download_FILL0_wght400_GRAD0_opsz48.svg),
+            linear-gradient(white, orange, white)
+            ;
+            background-size: 
+                30px 30px,
+                50px 10px;
+            background-position: center 4px,
+                                  0 -10px;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+            padding: 5px;
+            border-radius: 30px;
+        }
+        .button:target a::before {
+            animation: download 1s 5;
+        }
+
+        @keyframes download {
+            from {
+                background-position:
+                center 4px,
+                0 0px;
+            }
+            to {
+                background-position:
+                center 4px,
+                0 40px;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div  id="download-button" class="button">
+        <a href="#download-button">DOWNLOAD</a>
+    </div>
+    
+</body>
+</html>
